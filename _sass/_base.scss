@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'FranklinITCPro';
+    src: url('fonts/franklinitcpro-thin.woff') format('woff'),
+        url('fonts/franklinitcpro-thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FranklinITCPro';
+    src: url('fonts/franklinitcpro-light.woff') format('woff'),
+        url('fonts/franklinitcpro-light.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FranklinITCPro';
+    src: url('fonts/franklinitcpro-medium.woff') format('woff'),
+        url('fonts/franklinitcpro-medium.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/*
+   Bootstrap overrides.
+*/
+body {
+    font-family: 'FranklinITCPro',"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.jumbotron-banner {
+    -webkit-backdrop-filter: blur(100px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    opacity: 0.95;
+    position: fixed;
+}
+
+.img-banner {
+    padding-top: 231px;
+}
