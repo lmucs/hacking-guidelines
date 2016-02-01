@@ -44,3 +44,11 @@ body {
     padding-top: $banner-height; /* TODO Ideally this is a responsive mixin. */
     margin-bottom: 30px;
 }
+
+.panel-heading > dl {
+    margin-bottom: 0;
+}
+
+.panel-heading > dl > dt h4 {
+    font-weight: bold;
+}

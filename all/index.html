@@ -1,0 +1,58 @@
+---
+title: Language-Independent Guidelines
+layout: default
+---
+
+<h2>{{ page.title }}</h2>
+
+<p class="lead">
+  Some guidelines simply have near-universal applicability. This where you’ll find them.
+</p>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <dl class="dl-horizontal">
+      <dt><h4>all-00</h4></dt>
+      <dd><h4>Indent with spaces, not tabs.</h4></dd>
+    </dl>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Reason</dt>
+      <dd>
+        Spaces are presented <em>way</em> more consistently than tabs are, and thus code indented
+        with spaces will look more consistent than code indented with tabs, whether the code is in
+        a browser, a terminal window, or an editor.
+      </dd>
+
+      <dt>Exceptions</dt>
+      <dd>
+        Languages where tabs have a specific meaning, such as in Makefiles.
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <dl class="dl-horizontal">
+      <dt><h4>all-01</h4></dt>
+      <dd><h4>Maintain a maximum line length.</h4></dd>
+    </dl>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Reason</dt>
+      <dd>
+        As with <code>all-00</code>, the reason is again consistency. Some editors or code displays will auto-linebreak;
+        others won’t. A suitable maximum line length is one that, most of the time, represents a typical horizontal
+        display size. That way, even if auto-linebreak might happen, at this width it most likely won’t.
+      </dd>
+
+      <dt>Current Recommendation</dt>
+      <dd>
+        For current screen sizes, <code>120</code> fixed-width characters works well.
+      </dd>
+    </dl>
+  </div>
+</div>
