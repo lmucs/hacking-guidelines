@@ -29,6 +29,12 @@ layout: default
       <dd>
         Languages where tabs have a specific meaning, such as in Makefiles.
       </dd>
+
+      <dt>Protip</dt>
+      <dd>
+        Most code editors worth their salt can automate this for you. Figure out how you can get your
+        editor to do this.
+      </dd>
     </dl>
   </div>
 </div>
@@ -52,6 +58,106 @@ layout: default
       <dt>Current Recommendation</dt>
       <dd>
         For current screen sizes, <code>120</code> fixed-width characters works well.
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <dl class="dl-horizontal">
+      <dt><h4>all-02</h4></dt>
+      <dd><h4>Use comments only when the code itself is not sufficiently clear.</h4></dd>
+    </dl>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Corollary</dt>
+      <dd>
+        If you’re using comments a lot, then your code probably should get clearer.
+      </dd>
+
+      <dt>Reason</dt>
+      <dd>
+        Comments clutter your code and multiply the amount of maintenance involved when your code evolves.
+      </dd>
+
+      <dt>Clarification</dt>
+      <dd>
+        Note that this guideline does <em>not</em> say “Never use comments.” As “Uncle Bob” Martin wrote
+        in the dicussion thread of <a href="http://butunclebob.com/ArticleS.TimOttinger.ApologizeIncode">Apologies
+        in Code</a>, “I will write comments; but when I do I consider it to be a failure of expression.
+        Sometimes the fault is our languages. Sometimes the fault is our own talent or imagination.”
+      </dd>
+
+      <dt>Further Reading</dt>
+      <dd>
+        <ul class="list-unstyled">
+          <li><a href="http://butunclebob.com/ArticleS.TimOttinger.ApologizeIncode">http://butunclebob.com/ArticleS.TimOttinger.ApologizeIncode</a></li>
+          <li><a href="http://c2.com/cgi/wiki?ToNeedComments">http://c2.com/cgi/wiki?ToNeedComments</a></li>
+          <li><a href="http://blog.pragmaticengineer.com/a-comment-is-an-invitation-for-refactoring/">http://blog.pragmaticengineer.com/a-comment-is-an-invitation-for-refactoring/</a></li>
+          <li><a href="http://blog.codinghorror.com/coding-without-comments/">http://blog.codinghorror.com/coding-without-comments/</a></li>
+        </ul>
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <dl class="dl-horizontal">
+      <dt><h4>all-03</h4></dt>
+      <dd><h4>Choose descriptive names.</h4></dd>
+    </dl>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Corollary</dt>
+      <dd>
+        Don’t be afraid of long names. Long but clear names pay for themselves in ease of understanding
+        and maintenance.
+      </dd>
+
+      <dt>Another Corollary</dt>
+      <dd>
+        Names with an ordinal like <code>customer1</code> or <code>product2</code> are almost never the
+        right ones.
+      </dd>
+
+      <dt>Reason</dt>
+      <dd>
+        Good names go a looooooong way toward making your code self-explanatory (so this supports <code>all-02</code>
+        as well).
+      </dd>
+
+      <dt>Exceptions</dt>
+      <dd>
+        Languages with severe name limitations—in which case, you may want to consider using a different one!
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <dl class="dl-horizontal">
+      <dt><h4>all-04</h4></dt>
+      <dd><h4>Don’t repeat yourself (DRY).</h4></dd>
+    </dl>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Explanation</dt>
+      <dd>
+        If distinct blocks of code do the same thing (or almost the same thing, differing only in terms of
+        certain values), then that probably should be a single block of code. Consolidate them into a function.
+        If the code is not identical, extract the differences as parameters.
+      </dd>
+
+      <dt>Reason</dt>
+      <dd>
+        Repetitive code is harder to maintain. If you fix a bug in one copy, you will need to fix that same bug
+        in all of the other copies. Sometimes repeating this fix is forgotten.
       </dd>
     </dl>
   </div>
