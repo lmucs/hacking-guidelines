@@ -52,3 +52,7 @@ body {
 .panel-heading > dl > dt h4 {
     font-weight: bold;
 }
+
+.panel-body dt, .panel-body dd {
+    margin-bottom: 1ex;
+}

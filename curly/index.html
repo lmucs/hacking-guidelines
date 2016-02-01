@@ -16,8 +16,10 @@ layout: default
   <div class="col-xs-4">
     <div class="panel panel-default">
       <div class="panel-body">
-        <img src="{{ site.baseurl }}/images/c.png" class="img-responsive center-block" alt="C logo">
-        <h4 class="text-center">(duh)</h4>
+        <a href="{{ site.baseurl }}/c">
+          <img src="{{ site.baseurl }}/images/c.png" class="img-responsive center-block" alt="C logo">
+          <h4 class="text-center">(duh)</h4>
+        </a>
       </div>
     </div>
   </div>
@@ -25,8 +27,10 @@ layout: default
   <div class="col-xs-4">
     <div class="panel panel-default">
       <div class="panel-body">
-        <img src="{{ site.baseurl }}/images/java.png" class="img-responsive center-block" alt="Java logo">
-        <h4 class="text-center">Java</h4>
+        <a href="{{ site.baseurl }}/java">
+          <img src="{{ site.baseurl }}/images/java.png" class="img-responsive center-block" alt="Java logo">
+          <h4 class="text-center">Java</h4>
+        </a>
       </div>
     </div>
   </div>
@@ -34,9 +38,102 @@ layout: default
   <div class="col-xs-4">
     <div class="panel panel-default">
       <div class="panel-body">
-        <img src="{{ site.baseurl }}/images/js.jpg" class="img-responsive center-block" alt="JavaScript logo">
-        <h4 class="text-center">JavaScript</h4>
+        <a href="{{ site.baseurl }}/javascript">
+          <img src="{{ site.baseurl }}/images/js.jpg" class="img-responsive center-block" alt="JavaScript logo">
+          <h4 class="text-center">JavaScript</h4>
+        </a>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <dl class="dl-horizontal">
+      <dt><h4>curly-00</h4></dt>
+      <dd><h4>Keep opening curly braces on the same line as the code that precedes them.</h4></dd>
+    </dl>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Oh Yes We Did</dt>
+      <dd>
+        Yes, we are explicitly choosing “1TBS” over “Allman-style” brace formatting.
+      </dd>
+
+      <dt>Reason</dt>
+      <dd>
+        Curly braces are a parsing necessary evil. In the absence of significant whitespace (as in Python),
+        a language needs unambiguous delimiters for code boundaries. Well-presented code uses other signs,
+        particularly whitespace, to indicate these boundaries, but curly-brace parsers are typically “blind”
+        to those signs. Thus, the braces have to be there but they don’t have to be given any more
+        presentational importance than they deserve.
+      </dd>
+
+      <dt>Example</dt>
+      <dd>
+        <pre>
+  if (codeIsFormattedWell) {
+      thereIsLessConfusion();
+      errorsAreLessLikely();
+  }</pre>
+      </dd>
+
+      <dt>Anti-Example</dt>
+      <dd>
+        <pre>
+  while (openingCurlyBraces)
+  {
+      appearOnTheirOwn();
+      thePrecedingCodeIsLessConnected();
+      toWhatComesAfter();
+  }</pre>
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <dl class="dl-horizontal">
+      <dt><h4>curly-01</h4></dt>
+      <dd><h4>Always linebreak and indent clauses, even one-liners, and always delimit them with braces.</h4></dd>
+    </dl>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Reason</dt>
+      <dd>
+        Presenting short clauses in a single line, and varying when to delimit them with braces, merely complicates
+        the choices you make in how code is formatted and can lead to unintended errors.
+      </dd>
+
+      <dt>Example</dt>
+      <dd>
+        <pre>
+  while (aClauseHasOneLine) {
+      alwaysUseBracesAndLinebreaksAndIndent();
+  }</pre>
+      </dd>
+
+      <dt>Anti-Examples</dt>
+      <dd>
+        <pre>
+  if (iAmAskingForTrouble)
+      thenIWillGetIntoTrouble();</pre>
+
+        <pre>
+  for (String excuse: excuses) youMightAddAnotherStatementOneDay();</pre>
+      </dd>
+
+      <dt>Real-World Case</dt>
+      <dd>
+        Failure to follow this practice contributed to the OS X Goto Fail vulnerability of 2014:
+        <ul class="list-unstyled">
+          <li>&nbsp;&nbsp;&nbsp;<a href="https://www.imperialviolet.org/2014/02/22/applebug.html">https://www.imperialviolet.org/2014/02/22/applebug.html</a></li>
+          <li>&nbsp;&nbsp;&nbsp;<a href="http://www.dwheeler.com/essays/apple-goto-fail.html">http://www.dwheeler.com/essays/apple-goto-fail.html</a></li>
+        </ul>
+      </dd>
+    </dl>
   </div>
 </div>
