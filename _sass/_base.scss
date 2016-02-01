@@ -37,6 +37,7 @@ body {
     left: 0;
     right: 0;
     min-height: $banner-height; /* TODO This should not be ncessary if .img-banner padding-top is responsive. */
+    z-index: 1000;
 }
 
 .img-banner {
