@@ -137,3 +137,48 @@ layout: default
     </dl>
   </div>
 </div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <dl class="dl-horizontal">
+      <dt><h4>curly-02</h4></dt>
+      <dd><h4>In multi-clause statements, keep the opening brace of the next clause on the same line as the
+          closing brace of the previous one.</h4></dd>
+    </dl>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Reason</dt>
+      <dd>
+        Doing this visually preserves the structure of the code: a multi-clause statement is still a single
+        statement, and so it should look like one.
+      </dd>
+
+      <dt>Example</dt>
+      <dd>
+        <pre>
+  if (thisHasAnElseClause) {
+      thenUseTheBraces();
+      asGlue();
+  } else {
+      thereMayBeConfusion();
+      thatWouldHaveBeenEasyToAvoid();
+  }</pre>
+      </dd>
+
+      <dt>Anti-Example</dt>
+      <dd>
+        <pre>
+  try {
+      notToSeparate();
+      multipartStatements();
+  }
+
+  catch (MisinterprentationException me) {
+      becauseThis();
+      doesNotRepresentWhatTheyMean();
+  }</pre>
+      </dd>
+    </dl>
+  </div>
+</div>
