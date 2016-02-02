@@ -5,7 +5,7 @@ github_username: lmucs
 
 # Dependencies
 markdown:         kramdown
-highlighter:      pygments
+highlighter:      rouge
 
 # Permalinks
 permalink:        none
