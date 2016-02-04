@@ -187,3 +187,35 @@ layout: default
     </dl>
   </div>
 </div>
+
+<div class="panel panel-default" id="all-cont">
+  <div class="panel-heading">
+    <dl class="dl-horizontal">
+      <dt><h4>all-cont</h4></dt>
+      <dd><h4>Maintain at least one indent for line/statement continuations.</h4></dd>
+    </dl>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Details</dt>
+      <dd>
+        When breaking a line or statement and continuing it in successive lines (perhaps because you were following
+        <a href="#all-max">all-max</a>, but possibly for other reasons as well), indent the successive lines at least
+        once. Depending on the language, additional indentation such as a standard double-indent or by aligning
+        continued lines with delimiters (e.g., parentheses, braces) may be recommended or desirable.
+      </dd>
+
+      <dt>Reason</dt>
+      <dd>
+        One or more indents will show that the line itself does not stand on its own, being a continuation of the line
+        above it. This appropriately reflects the structure of the code.
+      </dd>
+
+      <dt>Current Recommendation</dt>
+      <dd>
+        When no additional specifics exist, a double-indent works well. This shows that the line is a continuation
+        and also distinguishes it from standard nesting.
+      </dd>
+    </dl>
+  </div>
+</div>

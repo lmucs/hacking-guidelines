@@ -1,0 +1,97 @@
+---
+title: HTML
+layout: default
+---
+
+<h2>{{ page.title }}</h2>
+
+<div class="panel panel-default" id="html-ind">
+  <div class="panel-heading">
+    <dl class="dl-horizontal">
+      <dt><h4>html-ind</h4></dt>
+      <dd><h4>Indent HTML using 2 spaces.</h4></dd>
+    </dl>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Reason</dt>
+      <dd>
+        HTML tends to nest pretty deeply, and understandably so. Thus, a small indentation size works well in this case.
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<div class="panel panel-default" id="html-case">
+  <div class="panel-heading">
+    <dl class="dl-horizontal">
+      <dt><h4>html-case</h4></dt>
+      <dd><h4>Where possible, use lowercase for HTML tags, attributes, and other identifiers.</h4></dd>
+    </dl>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Reason</dt>
+      <dd>
+        Staying with all-lowercase for the code elements of HTML allows the actual content, which tends to be
+        mixed-case, to stand out a little better among all of the tags and attributes. Content is king, after all.
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<div class="panel panel-default" id="html-attr">
+  <div class="panel-heading">
+    <dl class="dl-horizontal">
+      <dt><h4>html-attr</h4></dt>
+      <dd><h4>Don’t include whitespace before and after the <code>=</code> symbol in attributes.</h4></dd>
+    </dl>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Reason</dt>
+      <dd>
+        Eliminating this whitespace helps attributes look like a more cohesive unit.
+      </dd>
+
+      <dt>Example</dt>
+      <dd>
+        <pre>
+  &lt;div id="introduction" class="inset"&gt;
+    1 + 1 = 3 is an interesting design principle
+    pertaining to borders vs. whitespace.
+  &lt;/div&gt;</pre>
+      </dd>
+
+      <dt>Anti-Example</dt>
+      <dd>
+        <pre>
+  &lt;div id = "introduction" class = "inset"&gt;
+    1 + 1 = 3 is an interesting design principle
+    pertaining to borders vs. whitespace.
+  &lt;/div&gt;</pre>
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<div class="panel panel-default" id="html-mvc">
+  <div class="panel-heading">
+    <dl class="dl-horizontal">
+      <dt><h4>html-mvc</h4></dt>
+      <dd><h4>Be cognizant of deprecated HTML elements and attributes. Some of them are like that because they
+          violate MVC.</h4></dd>
+    </dl>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Reason</dt>
+      <dd>
+        The modern view of HTML is that it holds the <em>content</em> or <em>model</em> of a particular web
+        application. Elements like <code>font</code> and <code>center</code> or attributes such as <code>color</code>
+        pertain to the <em>presentation</em> or <em>view</em>, which today is rightly separated into CSS.
+      </dd>
+    </dl>
+  </div>
+</div>
+
