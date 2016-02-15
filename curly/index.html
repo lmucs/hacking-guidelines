@@ -182,3 +182,99 @@ layout: default
     </dl>
   </div>
 </div>
+
+<div class="panel panel-default" id="curly-space">
+  <div class="panel-heading">
+    <dl class="dl-horizontal">
+      <dt><h4>curly-space</h4></dt>
+      <dd><h4>In general, add a space before and after braces. Notable exceptions include when they are
+          adjacent to same-sided parentheses, at the beginning or end of a line, or preceding
+          punctuation.</h4></dd>
+    </dl>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Reason</dt>
+      <dd>
+        This continues the theme of reinforcing visually the structure of the code. Appropriate spacing
+        keeps semantic entities distinct and prevents code from looking cluttered.
+      </dd>
+
+      <dt>Example</dt>
+      <dd>
+        <pre>
+  while (aBraceFollowsAParenthetical) {
+      placeASpaceInBetweenThem();
+      toAvoidConfusion();
+  }
+
+  aOneLineLiteral = { "less", "cluttered", "with", "spaces" };</pre>
+      </dd>
+
+      <dt>Anti-Example</dt>
+      <dd>
+        <pre>
+  try{
+      toIncludeSpaces();
+      beforeAndAfterBraces();
+      inAppropriatePlaces();
+  }catch (ClutterException ce){
+      becauseWithoutThem();
+      distinctElements();
+      standOutLess();
+  }</pre>
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<div class="panel panel-default" id="curly-rsrv">
+  <div class="panel-heading">
+    <dl class="dl-horizontal">
+      <dt><h4>curly-rsrv</h4></dt>
+      <dd><h4>Include a space before and after reserved words like <code>if</code>, <code>while</code>,
+          <code>return</code>, etc.</h4></dd>
+    </dl>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Reason</dt>
+      <dd>
+        Reserved words are part of the language and are neither functions, nor variables, nor other expressions.
+        Adding a space keeps them from being misread as any of these.
+      </dd>
+
+      <dt>Observation</dt>
+      <dd>
+        If the character after a reserved word is not punctuation, you <emph>must</emph> insert a space anyway.
+        This guideline keeps the rules consistent across the board.
+      </dd>
+
+      <dt>Example</dt>
+      <dd>
+        <pre>
+  for (int i = aReservedWord; i !== identifier; i += 1) {
+      surroundThemWithSpaces();
+      if (notSurrounded) {
+          return potentialMisreading;
+      }
+  }
+      </dd>
+
+      <dt>Anti-Example</dt>
+      <dd>
+        <pre>
+  while(isNotAFunction) {
+      butItMightLookLikeOne();
+      ifThereIsNoSpaceAfterIt();
+  }
+
+  try{
+      theLineAboveIsAlsoCoveredByCurlySpace();
+  } catch(NotAFunctionException nafe) {
+      returnthisLineWillNotCompileWithoutASpace;
+  }</pre>
+      </dd>
+    </dl>
+  </div>
+</div>
