@@ -1,0 +1,189 @@
+---
+title: JavaScript
+layout: default
+---
+
+<h2>{{ page.title }}</h2>
+
+<p class="lead">
+  The core programming language of the Worldwide Web, JavaScript continues the tradition of delivering a radically
+  distinct language in the deceptively familiar wrapping of a “curly brace” syntax.
+</p>
+
+<div class="panel panel-default" id="js-eq">
+  <div class="panel-heading">
+    <dl class="dl-horizontal">
+      <dt><h4>js-eq</h4></dt>
+      <dd><h4>Use <code>===</code> and <code>!==</code> for equality and inequality, respectively.</h4></dd>
+    </dl>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Reason</dt>
+      <dd>
+        The traditional curly brace comparators <code>==</code> and <code>!=</code> do not behave in the same way in
+        JavaScript: these comparators may perform implicit coercions or conversions that can lead to unexpected
+        results. <code>===</code> and <code>!==</code> behave more consistently.
+      </dd>
+
+      <dt>Example</dt>
+      <dd>
+        <pre>
+  while (comparator === tripleEquals) {
+      result = equalityYouCanTrust;
+  }</pre>
+      </dd>
+
+      <dt>Anti-Example</dt>
+      <dd>
+        <pre>
+  if (0 == "") {
+      umm();
+      no();
+  }</pre>
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<div class="panel panel-default" id="js-tf">
+  <div class="panel-heading">
+    <dl class="dl-horizontal">
+      <dt><h4>js-tf</h4></dt>
+      <dd><h4>Favor truthiness and falsiness unless you mean something that is truly more specific.</h4></dd>
+    </dl>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Reason</dt>
+      <dd>
+        JavaScript’s convention for what evaluates to “falsy”—<code>null</code>, <code>undefined</code>,
+        <code>0</code>, <code>false</code>, <code>""</code>, <code>NaN</code>—is, for the most part, appropriate
+        in a lot of cases. This makes conditionals shorter, and thus more readable and less error-prone.
+      </dd>
+
+      <dt>Caveat</dt>
+      <dd>
+        The assumption here is that the code’s readers and writers are clear on what is truthy and falsy in
+        JavaScript. If not, then…ensure that they are.
+      </dd>
+
+      <dt>Exception</dt>
+      <dd>
+        There will certainly be times when the truthy/falsy convention will not apply, and in those cases,
+        by all means use a more specific comparison. Doing this consistently—i.e., resorting to a specific
+        comparison, such as <code>!== null</code> or <code>=== undefined</code>, only when such specificity
+        is needed—helps communicate this very necessity to your code’s readers.
+      </dd>
+
+      <dt>Example</dt>
+      <dd>
+        <pre>
+  if (networkResponse) {
+      processTheResponseOnlyIfThereIsOne();
+  }</pre>
+      </dd>
+
+      <dt>Anti-Example</dt>
+      <dd>
+        <pre>
+  while (input.length === 0) {
+      emptyStringsAreAlreadyFalsy();
+      andYouMightWantToLoopIfNullOrUndefinedAnyway();
+  }</pre>
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<div class="panel panel-default" id="js-func">
+  <div class="panel-heading">
+    <dl class="dl-horizontal">
+      <dt><h4>js-func</h4></dt>
+      <dd><h4>Favor assigning functions to variables over function statements.</h4></dd>
+    </dl>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Reason</dt>
+      <dd>
+        Functions in JavaScript are truly first-class objects in the programming language design sense of the
+        term: they can be passed as arguments, returned from a function, and assigned to a variable. The use
+        of function statements (i.e., <code>function someFunction(arguments) { ... }</code>) obscures this
+        semantics, presumably so that JavaScript looks “less foreign” in relation to other languages. But this
+        particular language feature <emph>is</emph> foreign in relation to them, and should thus look
+        correspondingly different.
+      </dd>
+
+      <dt>Corollary</dt>
+      <dd>
+        Function definitions are essentially function statements without a name, so formatting them with a space
+        between <code>function</code> and the parameter list is consistent with this distinction (i.e., <code>function
+        nameOfFunction(...)</code> with <code>nameOfFunction</code> removed is simply <code>function (...)</code>).
+      </dd>
+
+      <dt>Example</dt>
+      <dd>
+        <pre>
+  var handleResponse = function (response, status) {
+      doSomethingWithResponseAndStatus();
+      andNoteHowYouCanPassThisFunctionAsAnArgument();
+      orReturnItAsAFunctionResult();
+  };</pre>
+      </dd>
+
+      <dt>Anti-Example</dt>
+      <dd>
+        <pre>
+  function handleResponse(response, status) {
+      firstClassStatusIsObscured();
+      scopingMightAlsoBeAProblem();
+  }</pre>
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<div class="panel panel-default" id="js-var">
+  <div class="panel-heading">
+    <dl class="dl-horizontal">
+      <dt><h4>js-var</h4></dt>
+      <dd><h4>Precede all variable declarations with <code>var</code>.</h4></dd>
+    </dl>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Reason</dt>
+      <dd>
+        In JavaScript, a declared identifier that does not begin with <code>var</code> is placed at the top-level
+        scope—i.e., it becomes a global variable. Always preceding a declaration with <code>var</code> represents
+        an abundance of caution toward never letting that happen unintentionally. This also makes refactors such
+        as adding, removing, or relocating variable declarations less error-prone.
+      </dd>
+
+      <dt>Example</dt>
+      <dd>
+        <pre>
+  var options = { timeout: 500 };
+  var initialValue = 10;
+
+  var cleanup = function () {
+      element.innerHTML = "";
+      input.value = 0;
+  };</pre>
+      </dd>
+
+      <dt>Anti-Example</dt>
+      <dd>
+        <pre>
+  var options = { timeout: 500 },
+      initialValue = 10,
+
+      cleanup = function () {
+          element.innerHTML = "";
+          input.value = 0;
+      };</pre>
+      </dd>
+    </dl>
+  </div>
+</div>
