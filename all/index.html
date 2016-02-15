@@ -239,3 +239,107 @@ layout: default
     </dl>
   </div>
 </div>
+
+<div class="panel panel-default" id="all-bool">
+  <div class="panel-heading">
+    <dl class="dl-horizontal">
+      <dt><h4>all-bool</h4></dt>
+      <dd><h4>Don’t compare conditions to Boolean values—they already are!</h4></dd>
+    </dl>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Reason</dt>
+      <dd>
+        Conditions are themselves Boolean (or Boolean-equivalent) in most programming languages, so it is redundant
+        to compare these to Boolean values.
+      </dd>
+    </dl>
+
+    <dl class="dl-horizontal">
+      <dt>Python</dt>
+      <dd>
+        <p><em>Don’t</em></p>
+        <pre>
+    if (value in list) == True:
+        process_value(value)</pre>
+
+        <p><em>Do</em></p>
+        <pre>
+    if value in list:
+        process_value(value)</pre>
+      </dd>
+    </dl>
+
+    <dl class="dl-horizontal">
+      <dt>JavaScript</dt>
+      <dd>
+        <p><em>Don’t</em></p>
+        <pre>
+    if (inputElement.enabled === false) {
+        panel.style.backgroundColor = "gray";
+    }</pre>
+
+        <p><em>Do</em></p>
+        <pre>
+    if (!inputElement.enabled) {
+        panel.style.backgroundColor = "gray";
+    }</pre>
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<div class="panel panel-default" id="all-ifassgn">
+  <div class="panel-heading">
+    <dl class="dl-horizontal">
+      <dt><h4>all-ifassgn</h4></dt>
+      <dd><h4><code>if</code> statements whose only action is the assignment or returning of a value should
+          be replaced with a conditional expression.</h4></dd>
+    </dl>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Reason</dt>
+      <dd>
+        In the spirit of “make your code communicate its intent,” an <code>if</code> statement is meant to choose
+        among possible <em>actions</em> that a program can make. When said “action” is restricted only to the
+        assignment of a variable or returning a function result, then what your code is really trying to do is choose
+        among possible <em>values</em>, not actions. In this situation, a conditional expression (to the degree
+        that the language provides it) conveys the point more clearly and is less prone to error.
+      </dd>
+    </dl>
+
+    <dl class="dl-horizontal">
+      <dt>Python</dt>
+      <dd>
+        <p><em>Don’t</em></p>
+        <pre>
+    if authorized(user):
+        return STATUS_OK
+    else:
+        return STATUS_FORBIDDEN</pre>
+
+        <p><em>Do</em></p>
+        <pre>
+    return STATUS_OK if authorized(user) else STATUS_FORBIDDEN</pre>
+      </dd>
+    </dl>
+
+    <dl class="dl-horizontal">
+      <dt>JavaScript</dt>
+      <dd>
+        <p><em>Don’t</em></p>
+        <pre>
+    var color = options.color;
+    if (!color) {
+        color = DEFAULT_COLOR;
+    }</pre>
+
+        <p><em>Do</em></p>
+        <pre>
+    var color = options.color || DEFAULT_COLOR;</pre>
+      </dd>
+    </dl>
+  </div>
+</div>
