@@ -33,7 +33,7 @@ body {
     -webkit-backdrop-filter: blur(100px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
     opacity: 0.95;
-    position: fixed;
+    margin-bottom: 0px;
     left: 0;
     right: 0;
     min-height: $banner-height; /* TODO This should not be ncessary if .img-banner padding-top is responsive. */
@@ -41,7 +41,6 @@ body {
 }
 
 .img-banner {
-    padding-top: $banner-height; /* TODO Ideally this is a responsive mixin. */
     margin-bottom: 30px;
 }
 
