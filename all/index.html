@@ -349,3 +349,50 @@ layout: default
     </dl>
   </div>
 </div>
+
+<div class="panel panel-default" id="all-parenexpr">
+  <div class="panel-heading">
+    <dl class="dl-horizontal">
+      <dt><h4>all-parenexpr</h4></dt>
+      <dd><h4>Do <em>not</em> include spaces inside parenthetical/nested expressions.</h4></dd>
+    </dl>
+  </div>
+  <div class="panel-body">
+    <dl class="dl-horizontal">
+      <dt>Reason</dt>
+      <dd>
+        Nearly all languages allow nested expressions, and nearly all of these use parentheses to delimit their
+        subexpressions. As delimiters, the parentheses are more appropriately thought of as part of the <em>inner</em>
+        expression, so adding spaces after and before the left and right parentheses, respectively, does not accurately
+        reflect the structure of the code <a href="/hacking-guidelines/#fnd-mng"><code>fnd-mng</code></a>.
+      </dd>
+    </dl>
+
+    <dl class="dl-horizontal">
+      <dt>Examples</dt>
+      <dd>
+        <pre>return (-b + sqrt((b * b) - (4 * a * c))) / (2 * a);</pre>
+        <pre>if (i > max || j &lt; (min * 4) + skip) {</pre>
+      </dd>
+    </dl>
+
+    <dl class="dl-horizontal">
+      <dt>Anti-Examples</dt>
+      <dd>
+        <pre>return ( -b + sqrt( ( b * b ) - ( 4 * a * c ) ) ) / ( 2 * a );</pre>
+        <pre>if ( i > max || j &lt; ( min * 4 ) + skip ) {</pre>
+      </dd>
+    </dl>
+
+    <dl class="dl-horizontal">
+      <dt>On Precedence</dt>
+      <dd>
+        Note that even if one argues for taking advantage of operator precedence to minimize parentheticals, in the
+        general case (a) this will not always be possible to rely on precedence, (b) some precedence rules are confusing
+        anyway (e.g., conditional expression precedence in JavaScript) and (c) it is generally safer not to aggressively
+        rely on precedence anyway in case a precedence rule is easily misunderstood (ditto conditional expressions in
+        JavaScript) or code might be read by personnel who do not have the same knowledge level of the language.
+      </dd>
+    </dl>
+  </div>
+</div>
